@@ -15,7 +15,14 @@ interface StaffManagerProps {
   onChange: (users: StaffUser[]) => void;
 }
 
-const ROLES = ['Owner', 'Bar Entry(bouncer)', 'Waiter', 'Eventier', 'DJ', 'Valet Manager'];
+const ROLES = [
+  { value: 'Owner',        label: 'Owner' },
+  { value: 'Bar Entry',    label: 'Bar Entry (Bouncer)' },
+  { value: 'Waiter',       label: 'Waiter' },
+  { value: 'Eventier',     label: 'Eventier' },
+  { value: 'DJ',           label: 'DJ' },
+  { value: 'Valet Manager',label: 'Valet Manager' },
+];
 const MAX_PER_ROLE = 5;
 
 export default function StaffManager({ staffUsers, onChange }: StaffManagerProps) {
@@ -42,7 +49,7 @@ export default function StaffManager({ staffUsers, onChange }: StaffManagerProps
 
   const getRoleCount = (role: string) => staffUsers.filter(u => u.role === role).length;
 
-  const isRoleFull = (role: string) => role && getRoleCount(role) >= MAX_PER_ROLE;
+  const isRoleFull = (role: string) => !!role && getRoleCount(role) >= MAX_PER_ROLE;
 
   const handleCreate = () => {
     if (!formData.name || formData.phone.length !== 10 || !formData.role) return;
@@ -101,9 +108,9 @@ export default function StaffManager({ staffUsers, onChange }: StaffManagerProps
             onChange={(e) => setRoleFilter(e.target.value)}
             className="bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
-            <option>All Roles</option>
-            {ROLES.map(role => (
-              <option key={role} value={role}>{role}</option>
+            <option value="All Roles">All Roles</option>
+            {ROLES.map(({ value, label }) => (
+              <option key={value} value={value}>{label}</option>
             ))}
           </select>
         </div>
@@ -205,11 +212,11 @@ export default function StaffManager({ staffUsers, onChange }: StaffManagerProps
                   className="w-full px-4 py-2.5 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                 >
                   <option value="" disabled>Select a role</option>
-                  {ROLES.map(role => {
-                    const count = getRoleCount(role);
+                  {ROLES.map(({ value, label }) => {
+                    const count = getRoleCount(value);
                     return (
-                      <option key={role} value={role}>
-                        {role} ({count}/{MAX_PER_ROLE})
+                      <option key={value} value={value}>
+                        {label} ({count}/{MAX_PER_ROLE})
                       </option>
                     );
                   })}
