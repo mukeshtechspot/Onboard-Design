@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowRight, CheckCircle2, AlertCircle, Ban, ChevronRight, ChevronLeft, Save, FileCheck, Sun, Moon, Database, MapPin, Clock, RefreshCw, Info } from 'lucide-react';
+import { ArrowRight, CheckCircle2, AlertCircle, Ban, ChevronRight, ChevronLeft, Save, FileCheck, Sun, Moon, Database, MapPin, Clock, RefreshCw, Info, Download } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { toast, Toaster } from 'sonner';
 import FeaturesSelector from './FeaturesSelector';
 import StaffManager, { StaffUser } from './StaffManager';
+import { downloadPdf } from './PdfForm';
 
 interface Field {
   label: string;
@@ -1039,6 +1040,16 @@ export default function App() {
                 {Math.round(progress)}%
               </div>
             </div>
+
+            {/* Download Form Button */}
+            <button
+              onClick={() => downloadPdf(steps as any, staffUsers, selectedFeatures)}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-semibold text-sm shadow-sm transition-all duration-200 cursor-pointer"
+              title="Download Blank Onboarding Form (PDF)"
+            >
+              <Download className="w-4 h-4" />
+              <span className="hidden sm:inline">Download Form</span>
+            </button>
 
             {/* Theme Toggle Button */}
             <button
