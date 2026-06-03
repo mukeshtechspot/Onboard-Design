@@ -1,0 +1,532 @@
+{
+  "_readme": "Paste this JSON into Figma using the 'Figma Tokens' plugin (Import > JSON) or use with the 'Builder.io' plugin. Each step is a separate Frame. DocType cards are reusable components.",
+  "_how_to_import": [
+    "1. Open Figma → Plugins → Figma Tokens → Import",
+    "2. Paste this JSON file",
+    "3. Apply tokens to your frames",
+    "Alternative: Use Builder.io plugin → Import HTML file (partner-onboarding-wireframe.html)"
+  ],
+
+  "global": {
+    "colors": {
+      "purple": {
+        "50":  { "value": "#EEEDFE", "type": "color" },
+        "200": { "value": "#AFA9EC", "type": "color" },
+        "600": { "value": "#534AB7", "type": "color" },
+        "800": { "value": "#3C3489", "type": "color" }
+      },
+      "teal": {
+        "50":  { "value": "#E1F5EE", "type": "color" },
+        "200": { "value": "#5DCAA5", "type": "color" },
+        "600": { "value": "#0F6E56", "type": "color" },
+        "800": { "value": "#085041", "type": "color" }
+      },
+      "amber": {
+        "50":  { "value": "#FAEEDA", "type": "color" },
+        "200": { "value": "#EF9F27", "type": "color" },
+        "600": { "value": "#854F0B", "type": "color" },
+        "800": { "value": "#633806", "type": "color" }
+      },
+      "blue": {
+        "50":  { "value": "#E6F1FB", "type": "color" },
+        "200": { "value": "#85B7EB", "type": "color" },
+        "600": { "value": "#185FA5", "type": "color" },
+        "800": { "value": "#0C447C", "type": "color" }
+      },
+      "green": {
+        "50":  { "value": "#EAF3DE", "type": "color" },
+        "200": { "value": "#97C459", "type": "color" },
+        "600": { "value": "#3B6D11", "type": "color" },
+        "800": { "value": "#27500A", "type": "color" }
+      },
+      "coral": {
+        "50":  { "value": "#FAECE7", "type": "color" },
+        "200": { "value": "#F0997B", "type": "color" },
+        "600": { "value": "#993C1D", "type": "color" }
+      },
+      "gray": {
+        "50":  { "value": "#F1EFE8", "type": "color" },
+        "100": { "value": "#D3D1C7", "type": "color" },
+        "600": { "value": "#5F5E5A", "type": "color" },
+        "800": { "value": "#444441", "type": "color" }
+      },
+      "text": {
+        "primary":   { "value": "#1a1a18", "type": "color" },
+        "secondary": { "value": "#5F5E5A", "type": "color" },
+        "hint":      { "value": "#888780", "type": "color" },
+        "carry":     { "value": "#0F6E56", "type": "color", "description": "Fields pre-filled from previous steps" },
+        "ok":        { "value": "#3B6D11", "type": "color", "description": "Verified / success state" },
+        "warn":      { "value": "#854F0B", "type": "color", "description": "Pending / warning state" },
+        "na":        { "value": "#993C1D", "type": "color", "description": "Not allowed / blocked" }
+      },
+      "border":    { "value": "#e0ded8", "type": "color" },
+      "bg":        { "value": "#f7f6f2", "type": "color" },
+      "white":     { "value": "#ffffff", "type": "color" }
+    },
+    "typography": {
+      "step-title":     { "fontSize": "16", "fontWeight": "600", "type": "typography" },
+      "step-subtitle":  { "fontSize": "12", "fontWeight": "400", "type": "typography" },
+      "card-name":      { "fontSize": "12", "fontWeight": "600", "type": "typography" },
+      "card-type":      { "fontSize": "10", "fontWeight": "400", "type": "typography" },
+      "field-label":    { "fontSize": "11", "fontWeight": "400", "type": "typography" },
+      "field-value":    { "fontSize": "11", "fontWeight": "500", "type": "typography" },
+      "carry-tag":      { "fontSize": "9",  "fontWeight": "500", "type": "typography" },
+      "cf-strip":       { "fontSize": "11", "fontWeight": "400", "type": "typography" }
+    },
+    "spacing": {
+      "card-padding":    { "value": "10 14", "type": "spacing" },
+      "card-gap":        { "value": "12", "type": "spacing" },
+      "field-gap":       { "value": "5", "type": "spacing" },
+      "step-gap":        { "value": "40", "type": "spacing" }
+    },
+    "borderRadius": {
+      "sm":  { "value": "6",  "type": "borderRadius" },
+      "md":  { "value": "10", "type": "borderRadius" },
+      "lg":  { "value": "14", "type": "borderRadius" },
+      "pill":{ "value": "20", "type": "borderRadius" }
+    }
+  },
+
+  "frames": {
+    "Step_01_Partner_Registration": {
+      "figma_frame_name": "Step 01 — Partner Registration",
+      "theme_color": "purple",
+      "badge": "New Entry",
+      "platform_reference": "Swiggy 'Add your restaurant'",
+      "doctypes": [
+        {
+          "name": "Partner Profile",
+          "type": "Master",
+          "figma_component": "DocType_Card",
+          "fields": [
+            { "label": "Owner Name",       "value": "Ramesh Kumar",           "state": "default" },
+            { "label": "Mobile",           "value": "+91 98400 12345",        "state": "default" },
+            { "label": "Email",            "value": "ramesh@spicehut.in",     "state": "default" },
+            { "label": "Restaurant Name",  "value": "Spice Hut Kitchen",      "state": "default" },
+            { "label": "Cuisine Type",     "value": "South Indian, Biryani",  "state": "default" },
+            { "label": "Outlet Type",      "value": "Cloud Kitchen",          "state": "default" },
+            { "label": "City",             "value": "Chennai",                "state": "default" },
+            { "label": "Pincode",          "value": "600001",                 "state": "default" }
+          ],
+          "carry_forward": ["Partner ID", "Owner Name", "Restaurant Name", "Mobile", "City"]
+        },
+        {
+          "name": "Outlet Address",
+          "type": "Child",
+          "figma_component": "DocType_Card",
+          "fields": [
+            { "label": "Address Line 1",    "value": "12, Anna Nagar",         "state": "default" },
+            { "label": "Address Line 2",    "value": "Near Metro Station",     "state": "default" },
+            { "label": "Landmark",          "value": "Opp. Big Bazaar",        "state": "default" },
+            { "label": "Latitude",          "value": "13.0827° N",             "state": "default" },
+            { "label": "Longitude",         "value": "80.2707° E",             "state": "default" },
+            { "label": "Delivery Radius",   "value": "5 km",                   "state": "default" },
+            { "label": "Parking Available", "value": "Yes",                    "state": "default" }
+          ],
+          "carry_forward": ["Delivery Radius", "Geo Coordinates"]
+        },
+        {
+          "name": "Operating Hours",
+          "type": "Child Table",
+          "figma_component": "DocType_Card",
+          "fields": [
+            { "label": "Mon–Fri",         "value": "08:00 – 23:00", "state": "default" },
+            { "label": "Sat–Sun",         "value": "09:00 – 00:00", "state": "default" },
+            { "label": "Holiday Hours",   "value": "10:00 – 20:00", "state": "default" },
+            { "label": "Avg Prep (mins)", "value": "25",            "state": "default" },
+            { "label": "Auto-Close",      "value": "Yes",           "state": "default" }
+          ],
+          "carry_forward": ["Operating Hours", "Prep Time"]
+        },
+        {
+          "name": "Contact & Login",
+          "type": "Single",
+          "figma_component": "DocType_Card",
+          "fields": [
+            { "label": "Login Mobile",       "value": "+91 98400 12345", "state": "default" },
+            { "label": "OTP Verified",       "value": "✓ Verified",      "state": "ok" },
+            { "label": "Alt. Contact",       "value": "+91 99001 55555", "state": "default" },
+            { "label": "WhatsApp Enabled",   "value": "Yes",             "state": "default" },
+            { "label": "Preferred Language", "value": "Tamil / English", "state": "default" }
+          ],
+          "carry_forward": ["Mobile", "WhatsApp Flag", "Language Preference"]
+        }
+      ],
+      "carry_to_step": "02",
+      "carry_fields": ["Partner ID", "Restaurant Name", "Owner Name", "Mobile", "City", "Pincode"]
+    },
+
+    "Step_02_Business_Verification": {
+      "figma_frame_name": "Step 02 — Business Verification",
+      "theme_color": "amber",
+      "badge": "KYC + Legal",
+      "platform_reference": "Zomato for Business onboarding",
+      "doctypes": [
+        {
+          "name": "FSSAI License",
+          "type": "Master",
+          "figma_component": "DocType_Card",
+          "fields": [
+            { "label": "Partner Name",  "value": "Ramesh Kumar ↗",    "state": "carry" },
+            { "label": "FSSAI Number",  "value": "10019011000123",     "state": "default" },
+            { "label": "Issue Date",    "value": "01-Jan-2023",        "state": "default" },
+            { "label": "Expiry Date",   "value": "31-Dec-2025",        "state": "default" },
+            { "label": "License Type",  "value": "State License",      "state": "default" },
+            { "label": "Upload Doc",    "value": "PDF / JPG",          "state": "placeholder" },
+            { "label": "Status",        "value": "Verified ✓",         "state": "ok" }
+          ],
+          "carry_forward": ["FSSAI Verified Status"]
+        },
+        {
+          "name": "GST Registration",
+          "type": "Master",
+          "figma_component": "DocType_Card",
+          "fields": [
+            { "label": "GSTIN",             "value": "33AABCS1429B1ZB",     "state": "default" },
+            { "label": "Legal Entity Name", "value": "Spice Hut Foods Pvt", "state": "default" },
+            { "label": "State Code",        "value": "33 – Tamil Nadu",     "state": "default" },
+            { "label": "Registration Date", "value": "15-Mar-2022",         "state": "default" },
+            { "label": "Business Type",     "value": "Regular",             "state": "default" },
+            { "label": "Auto-verified",     "value": "API ✓",               "state": "ok" }
+          ],
+          "carry_forward": ["GSTIN", "Legal Entity Name"]
+        },
+        {
+          "name": "Bank Account",
+          "type": "Master",
+          "figma_component": "DocType_Card",
+          "fields": [
+            { "label": "Account Holder", "value": "Spice Hut Foods Pvt", "state": "default" },
+            { "label": "Account Number", "value": "XXXX XXXX 4892",       "state": "default" },
+            { "label": "IFSC Code",      "value": "HDFC0001234",          "state": "default" },
+            { "label": "Bank Name",      "value": "HDFC Bank",            "state": "default" },
+            { "label": "Branch",         "value": "Anna Nagar, Chennai",  "state": "default" },
+            { "label": "Penny Drop",     "value": "Passed ✓",             "state": "ok" }
+          ],
+          "carry_forward": ["Bank Account ID", "IFSC Code"]
+        },
+        {
+          "name": "Owner KYC",
+          "type": "Child",
+          "figma_component": "DocType_Card",
+          "fields": [
+            { "label": "PAN Number",    "value": "ABCDE1234F",       "state": "default" },
+            { "label": "Aadhaar",       "value": "XXXX XXXX 8723",   "state": "default" },
+            { "label": "ID Proof Type", "value": "Aadhaar + PAN",    "state": "default" },
+            { "label": "Address Proof", "value": "Utility Bill",     "state": "default" },
+            { "label": "KYC Status",    "value": "Approved ✓",       "state": "ok" },
+            { "label": "Verified By",   "value": "System + Manual",  "state": "default" }
+          ],
+          "carry_forward": ["KYC Status"]
+        }
+      ],
+      "carry_to_step": "03",
+      "carry_fields": ["GSTIN", "Legal Name", "Verified Status", "Bank Account ID"]
+    },
+
+    "Step_03_Menu_Features_Setup": {
+      "figma_frame_name": "Step 03 — Menu & Features Setup",
+      "theme_color": "teal",
+      "badge": "Catalog Build",
+      "platform_reference": "Swiggy / Zomato catalog builder",
+      "doctypes": [
+        {
+          "name": "Menu Category",
+          "type": "Master",
+          "fields": [
+            { "label": "Outlet",           "value": "Spice Hut Kitchen ↗", "state": "carry" },
+            { "label": "Category Name",    "value": "Biryani",              "state": "default" },
+            { "label": "Display Order",    "value": "1",                    "state": "default" },
+            { "label": "Available Timing", "value": "11:00 – 23:00",        "state": "default" },
+            { "label": "Veg / Non-Veg",    "value": "Both",                 "state": "default" },
+            { "label": "Active",           "value": "Yes",                  "state": "ok" }
+          ],
+          "carry_forward": ["Category List"]
+        },
+        {
+          "name": "Menu Item",
+          "type": "Child Table",
+          "fields": [
+            { "label": "Item Name",     "value": "Chicken Dum Biryani", "state": "default" },
+            { "label": "Category",      "value": "Biryani ↗",           "state": "carry" },
+            { "label": "Base Price",    "value": "₹220",                "state": "default" },
+            { "label": "GST %",         "value": "5% ↗ auto",           "state": "carry" },
+            { "label": "Prep Time",     "value": "30 min",              "state": "default" },
+            { "label": "Calories",      "value": "650 kcal",            "state": "default" },
+            { "label": "Food Photo",    "value": "Upload 1:1 JPG",      "state": "placeholder" }
+          ],
+          "carry_forward": ["Menu Item List", "Prices", "Prep Times"]
+        },
+        {
+          "name": "Add-ons / Variants",
+          "type": "Child Table",
+          "fields": [
+            { "label": "Item Link",     "value": "Chicken Dum Biryani ↗", "state": "carry" },
+            { "label": "Variant Group", "value": "Portion Size",           "state": "default" },
+            { "label": "Option 1",      "value": "Half · ₹130",            "state": "default" },
+            { "label": "Option 2",      "value": "Full · ₹220",            "state": "default" },
+            { "label": "Add-on Raita",  "value": "+₹30",                   "state": "default" },
+            { "label": "Extra Gravy",   "value": "+₹20",                   "state": "default" }
+          ],
+          "carry_forward": ["Variant Catalog"]
+        },
+        {
+          "name": "Platform Integration",
+          "type": "Settings",
+          "fields": [
+            { "label": "Swiggy Res. ID",     "value": "SW-CHN-88214",   "state": "default" },
+            { "label": "Zomato Res. ID",     "value": "ZM-44512-CHN",   "state": "default" },
+            { "label": "POS System",         "value": "Petpooja v2",    "state": "default" },
+            { "label": "Printer Model",      "value": "Epson TM-T82III","state": "default" },
+            { "label": "Auto-accept Orders", "value": "Yes",            "state": "default" },
+            { "label": "Tablet Model",       "value": "Lenovo Tab M10", "state": "default" }
+          ],
+          "carry_forward": ["POS System", "Tablet Model", "Printer Model", "Platform IDs"]
+        }
+      ],
+      "carry_to_step": "04",
+      "carry_fields": ["POS System", "Tablet Model", "Printer", "Swiggy ID", "Zomato ID"]
+    },
+
+    "Step_04_Staff_Configuration": {
+      "figma_frame_name": "Step 04 — Staff Configuration",
+      "theme_color": "blue",
+      "badge": "Team Setup",
+      "platform_reference": "Uber Eats 'Team & Permissions'",
+      "doctypes": [
+        {
+          "name": "Staff Member",
+          "type": "Master",
+          "fields": [
+            { "label": "Outlet",          "value": "Spice Hut Kitchen ↗", "state": "carry" },
+            { "label": "Name",            "value": "Arjun Selvam",         "state": "default" },
+            { "label": "Role",            "value": "Order Manager",        "state": "default" },
+            { "label": "Mobile",          "value": "+91 9876500012",       "state": "default" },
+            { "label": "Login PIN",       "value": "••••",                 "state": "default" },
+            { "label": "Shift",           "value": "Morning (07–15h)",     "state": "default" },
+            { "label": "WhatsApp Alerts", "value": "On",                   "state": "default" }
+          ],
+          "carry_forward": ["Staff Name", "Staff Role", "Staff Mobile"]
+        },
+        {
+          "name": "Role & Permissions",
+          "type": "Child Table",
+          "fields": [
+            { "label": "Role Name",      "value": "Order Manager", "state": "default" },
+            { "label": "Accept Orders",  "value": "✓ Yes",         "state": "ok" },
+            { "label": "Cancel Orders",  "value": "✗ No",          "state": "na" },
+            { "label": "View Reports",   "value": "✓ Yes",         "state": "ok" },
+            { "label": "Edit Menu",      "value": "✗ No",          "state": "na" },
+            { "label": "Issue Refunds",  "value": "✗ No",          "state": "na" }
+          ],
+          "carry_forward": ["Role Permissions Map"]
+        },
+        {
+          "name": "Device Assignment",
+          "type": "Child",
+          "fields": [
+            { "label": "Device",       "value": "Lenovo Tab M10 ↗", "state": "carry" },
+            { "label": "Serial No.",   "value": "LNV-2024-00891",   "state": "default" },
+            { "label": "Assigned To",  "value": "Arjun Selvam",     "state": "default" },
+            { "label": "App Version",  "value": "Partner App v4.2", "state": "default" },
+            { "label": "Last Sync",    "value": "Today 08:45",      "state": "default" },
+            { "label": "Status",       "value": "Online ✓",         "state": "ok" }
+          ],
+          "carry_forward": ["Device Serial", "App Version"]
+        },
+        {
+          "name": "Notification Config",
+          "type": "Settings",
+          "fields": [
+            { "label": "New Order Alert",   "value": "Sound + SMS",    "state": "default" },
+            { "label": "Cancel Alert",      "value": "WhatsApp + Push","state": "default" },
+            { "label": "Daily Summary",     "value": "08:00 AM",       "state": "default" },
+            { "label": "Rating Alert",      "value": "Below 4.0 stars","state": "default" },
+            { "label": "Payout Alert",      "value": "On transfer",    "state": "default" }
+          ],
+          "carry_forward": ["Notification Rules"]
+        }
+      ],
+      "carry_to_step": "05",
+      "carry_fields": ["Staff List", "Roles", "Device Models", "Training Modules per Role"]
+    },
+
+    "Step_05_Training": {
+      "figma_frame_name": "Step 05 — Training",
+      "theme_color": "green",
+      "badge": "Enablement",
+      "platform_reference": "Swiggy Partner University",
+      "doctypes": [
+        {
+          "name": "Training Module",
+          "type": "Master",
+          "fields": [
+            { "label": "Module Name",  "value": "Order Acceptance Flow",   "state": "default" },
+            { "label": "Target Role",  "value": "Order Manager ↗",         "state": "carry" },
+            { "label": "Format",       "value": "Video + Quiz",            "state": "default" },
+            { "label": "Duration",     "value": "45 min",                  "state": "default" },
+            { "label": "Language",     "value": "Tamil / English",         "state": "default" },
+            { "label": "Pass Score",   "value": "70%",                     "state": "default" },
+            { "label": "Mandatory",    "value": "Yes — blocks GoLive",     "state": "warn" }
+          ],
+          "carry_forward": ["Module Completion Flags"]
+        },
+        {
+          "name": "Staff Training Log",
+          "type": "Transaction",
+          "fields": [
+            { "label": "Staff",        "value": "Arjun Selvam ↗",         "state": "carry" },
+            { "label": "Module",       "value": "Order Acceptance Flow",   "state": "default" },
+            { "label": "Started On",   "value": "25-Nov-2024",             "state": "default" },
+            { "label": "Completed On", "value": "25-Nov-2024",             "state": "default" },
+            { "label": "Score",        "value": "85% ✓",                   "state": "ok" },
+            { "label": "Certificate",  "value": "Auto-generated PDF",      "state": "default" }
+          ],
+          "carry_forward": ["Training Status per Staff"]
+        },
+        {
+          "name": "Readiness Checklist",
+          "type": "Checklist",
+          "fields": [
+            { "label": "FSSAI Verified",  "value": "✓ Done ↗", "state": "ok" },
+            { "label": "Menu Published",  "value": "✓ Done ↗", "state": "ok" },
+            { "label": "Staff Trained",   "value": "✓ Done ↗", "state": "ok" },
+            { "label": "Tablet Online",   "value": "✓ Done ↗", "state": "ok" },
+            { "label": "Test Order",      "value": "⏳ Pending","state": "warn" },
+            { "label": "Overall Status",  "value": "4/5 Checks","state": "warn" }
+          ],
+          "carry_forward": ["Readiness Score", "Checklist Status"]
+        },
+        {
+          "name": "Partner Support Ticket",
+          "type": "Transaction",
+          "fields": [
+            { "label": "Ticket ID",   "value": "TKT-2024-00541",    "state": "default" },
+            { "label": "Partner",     "value": "Spice Hut Kitchen ↗","state": "carry" },
+            { "label": "Issue Type",  "value": "Tablet Setup Help",  "state": "default" },
+            { "label": "Raised By",   "value": "Arjun Selvam",       "state": "default" },
+            { "label": "Priority",    "value": "High",               "state": "warn" },
+            { "label": "Status",      "value": "Resolved ✓",         "state": "ok" }
+          ],
+          "carry_forward": ["Support Resolution Status"]
+        }
+      ],
+      "carry_to_step": "06",
+      "carry_fields": ["Readiness Checklist", "Training Completion Flags", "Support Resolution"]
+    },
+
+    "Step_06_Go_Live": {
+      "figma_frame_name": "Step 06 — Go Live",
+      "theme_color": "green",
+      "badge": "Launch",
+      "platform_reference": "Final activation + listing publish",
+      "doctypes": [
+        {
+          "name": "Go Live Record",
+          "type": "Transaction",
+          "fields": [
+            { "label": "Partner",        "value": "Spice Hut Kitchen ↗", "state": "carry" },
+            { "label": "Live Date",      "value": "28-Nov-2024",         "state": "default" },
+            { "label": "Swiggy Listing", "value": "Active ✓",            "state": "ok" },
+            { "label": "Zomato Listing", "value": "Active ✓",            "state": "ok" },
+            { "label": "Menu Items",     "value": "48 items",            "state": "default" },
+            { "label": "Activated By",   "value": "Priya (Ops Team)",    "state": "default" }
+          ],
+          "carry_forward": []
+        },
+        {
+          "name": "Test Order Log",
+          "type": "Transaction",
+          "fields": [
+            { "label": "Order ID",        "value": "TEST-ORD-0001",       "state": "default" },
+            { "label": "Item Ordered",    "value": "Chicken Dum Biryani ↗","state": "carry" },
+            { "label": "Ordered Via",     "value": "Swiggy (Internal)",   "state": "default" },
+            { "label": "Accepted",        "value": "✓ 2m 14s",           "state": "ok" },
+            { "label": "Printed on KOT",  "value": "✓ Epson ↗",          "state": "ok" },
+            { "label": "Test Status",     "value": "Passed ✓",            "state": "ok" }
+          ],
+          "carry_forward": []
+        },
+        {
+          "name": "Payout Configuration",
+          "type": "Settings",
+          "fields": [
+            { "label": "Bank Account",    "value": "HDFC XXXX 4892 ↗",    "state": "carry" },
+            { "label": "Payout Cycle",    "value": "Weekly (Mon)",        "state": "default" },
+            { "label": "Commission %",    "value": "18% (Swiggy)",        "state": "default" },
+            { "label": "GST",             "value": "33AABCS1429B1ZB ↗",   "state": "carry" },
+            { "label": "First Payout",    "value": "04-Dec-2024",         "state": "default" },
+            { "label": "Invoicing Mode",  "value": "Auto e-Invoice",      "state": "default" }
+          ],
+          "carry_forward": []
+        },
+        {
+          "name": "Onboarding Summary",
+          "type": "Summary View",
+          "fields": [
+            { "label": "Total Days",     "value": "5 days",    "state": "default" },
+            { "label": "Steps Done",     "value": "6 / 6 ✓",  "state": "ok" },
+            { "label": "Staff",          "value": "4 members", "state": "default" },
+            { "label": "Docs Verified",  "value": "8 docs",    "state": "default" },
+            { "label": "Menu Items",     "value": "48 live",   "state": "default" },
+            { "label": "Final Status",   "value": "🟢 LIVE",   "state": "ok" }
+          ],
+          "carry_forward": []
+        }
+      ],
+      "carry_to_step": null,
+      "carry_fields": []
+    }
+  },
+
+  "data_flow_map": {
+    "_description": "Shows exactly which fields carry from each step to which target step",
+    "flows": [
+      { "from": "Step_01", "to": "Step_02", "fields": ["Partner ID", "Owner Name", "Restaurant Name", "Mobile", "City", "Pincode"] },
+      { "from": "Step_01", "to": "Step_06", "fields": ["Operating Hours", "Delivery Radius"], "type": "long-range" },
+      { "from": "Step_02", "to": "Step_03", "fields": ["GSTIN", "Legal Entity Name", "Verified Status", "Bank Account ID"] },
+      { "from": "Step_02", "to": "Step_06", "fields": ["Bank Account", "GSTIN"], "type": "long-range" },
+      { "from": "Step_03", "to": "Step_04", "fields": ["POS System", "Tablet Model", "Printer Model", "Platform IDs"] },
+      { "from": "Step_03", "to": "Step_06", "fields": ["Menu Item List", "Swiggy ID", "Zomato ID"], "type": "long-range" },
+      { "from": "Step_04", "to": "Step_05", "fields": ["Staff List", "Roles", "Device Models"] },
+      { "from": "Step_05", "to": "Step_06", "fields": ["Readiness Checklist", "Training Completion Flags", "Support Resolution"] }
+    ]
+  },
+
+  "figma_component_library": {
+    "DocType_Card": {
+      "layers": [
+        "card-head (frame, horizontal)",
+        "  card-icon (frame 28x28, cornerRadius 6)",
+        "  card-meta (frame, vertical)",
+        "    card-name (text, 12px/600)",
+        "    card-type (text, 10px/400)",
+        "fields (frame, vertical, gap 5)",
+        "  field-row (frame, horizontal, space-between) × N",
+        "    field-label (text, 11px/400, color: text-secondary)",
+        "    field-value (text, 11px/500, color: varies by state)",
+        "  carry-tag (frame, pill, teal-50 bg, teal-600 text)"
+      ],
+      "variants": {
+        "field-value-state": ["default", "carry", "ok", "warn", "na", "placeholder"]
+      }
+    },
+    "Step_Header": {
+      "layers": [
+        "step-num (frame 36x36, circle, themed bg)",
+        "step-meta (frame, vertical)",
+        "  step-title (text, 16px/600)",
+        "  step-subtitle (text, 12px/400, secondary)",
+        "step-badge (frame, pill, themed bg)"
+      ]
+    },
+    "CF_Strip": {
+      "description": "Carry-forward summary bar at bottom of each step",
+      "layers": [
+        "arrow-icon",
+        "cf-text (text, 11px, teal-800)"
+      ],
+      "style": "teal-50 bg, teal-200 border, radius-md"
+    }
+  }
+}

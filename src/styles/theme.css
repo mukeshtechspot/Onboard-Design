@@ -1,0 +1,321 @@
+@custom-variant dark (&:is(.dark *));
+
+html {
+  /* Offset scroll anchoring so content never hides behind the sticky app bar + step tabs */
+  scroll-padding-top: 145px;
+}
+
+:root {
+  --font-size: 16px;
+
+  /* Color Palette */
+  --purple-50: #EEEDFE;
+  --purple-200: #AFA9EC;
+  --purple-600: #534AB7;
+  --purple-800: #3C3489;
+
+  --teal-50: #E1F5EE;
+  --teal-200: #5DCAA5;
+  --teal-600: #0F6E56;
+  --teal-800: #085041;
+
+  --amber-50: #FAEEDA;
+  --amber-200: #EF9F27;
+  --amber-600: #854F0B;
+  --amber-800: #633806;
+
+  --blue-50: #E6F1FB;
+  --blue-200: #85B7EB;
+  --blue-600: #185FA5;
+  --blue-800: #0C447C;
+
+  --green-50: #EAF3DE;
+  --green-200: #97C459;
+  --green-600: #3B6D11;
+  --green-800: #27500A;
+
+  --coral-50: #FAECE7;
+  --coral-200: #F0997B;
+  --coral-600: #993C1D;
+
+  --gray-50: #F1EFE8;
+  --gray-100: #D3D1C7;
+  --gray-600: #5F5E5A;
+  --gray-800: #444441;
+
+  /* Semantic Text Colors */
+  --text-primary: #1a1a18;
+  --text-secondary: #5F5E5A;
+  --text-hint: #888780;
+  --text-carry: #0F6E56;
+  --text-ok: #3B6D11;
+  --text-warn: #854F0B;
+  --text-na: #993C1D;
+
+  /* Base System Colors */
+  --background: #f7f6f2;
+  --foreground: var(--text-primary);
+  --card: #ffffff;
+  --card-foreground: var(--text-primary);
+  --popover: #ffffff;
+  --popover-foreground: var(--text-primary);
+  --primary: #030213;
+  --primary-foreground: #ffffff;
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: #e0ded8;
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --ring: oklch(0.708 0 0);
+
+  /* Chart Colors */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  /* Border Radius */
+  --radius: 0.625rem;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 20px;
+
+  /* Spacing */
+  --spacing-card-padding-x: 14px;
+  --spacing-card-padding-y: 10px;
+  --spacing-card-gap: 12px;
+  --spacing-field-gap: 5px;
+  --spacing-step-gap: 40px;
+
+  /* Typography */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+
+  --text-step-title: 16px;
+  --text-step-subtitle: 12px;
+  --text-card-name: 12px;
+  --text-card-type: 10px;
+  --text-field-label: 11px;
+  --text-field-value: 11px;
+  --text-carry-tag: 9px;
+  --text-cf-strip: 11px;
+
+  /* Sidebar */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Base System Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+
+  /* Color Palette */
+  --color-purple-50: var(--purple-50);
+  --color-purple-200: var(--purple-200);
+  --color-purple-600: var(--purple-600);
+  --color-purple-800: var(--purple-800);
+
+  --color-teal-50: var(--teal-50);
+  --color-teal-200: var(--teal-200);
+  --color-teal-600: var(--teal-600);
+  --color-teal-800: var(--teal-800);
+
+  --color-amber-50: var(--amber-50);
+  --color-amber-200: var(--amber-200);
+  --color-amber-600: var(--amber-600);
+  --color-amber-800: var(--amber-800);
+
+  --color-blue-50: var(--blue-50);
+  --color-blue-200: var(--blue-200);
+  --color-blue-600: var(--blue-600);
+  --color-blue-800: var(--blue-800);
+
+  --color-green-50: var(--green-50);
+  --color-green-200: var(--green-200);
+  --color-green-600: var(--green-600);
+  --color-green-800: var(--green-800);
+
+  --color-coral-50: var(--coral-50);
+  --color-coral-200: var(--coral-200);
+  --color-coral-600: var(--coral-600);
+
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-600: var(--gray-600);
+  --color-gray-800: var(--gray-800);
+
+  /* Semantic Text Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-hint: var(--text-hint);
+  --color-text-carry: var(--text-carry);
+  --color-text-ok: var(--text-ok);
+  --color-text-warn: var(--text-warn);
+  --color-text-na: var(--text-na);
+
+  /* Chart Colors */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Border Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-pill: var(--radius-pill);
+
+  /* Spacing */
+  --spacing-card-padding-x: var(--spacing-card-padding-x);
+  --spacing-card-padding-y: var(--spacing-card-padding-y);
+  --spacing-card-gap: var(--spacing-card-gap);
+  --spacing-field-gap: var(--spacing-field-gap);
+  --spacing-step-gap: var(--spacing-step-gap);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
