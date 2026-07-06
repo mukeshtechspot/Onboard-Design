@@ -20,7 +20,7 @@ export default function FeaturesSelector({ selectedFeatures, onChange }: Feature
   useEffect(() => {
     const fetchFeatures = async () => {
       try {
-        const response = await fetch('https://dev.abotribe.com/api/method/abo.api.utils.get_features');
+        const response = await fetch('https://staging.abotribe.com/api/method/abo.api.utils.get_features');
         const data = await response.json();
         if (data?.message?.status === 'success' && data.message.features) {
           setFeatures(data.message.features);
@@ -83,11 +83,10 @@ export default function FeaturesSelector({ selectedFeatures, onChange }: Feature
                 <button
                   key={feature.name}
                   onClick={() => toggleFeature(feature.name)}
-                  className={`relative flex items-center gap-1.5 px-3.5 py-2 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] cursor-pointer ${
-                    isSelected
+                  className={`relative flex items-center gap-1.5 px-3.5 py-2 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] cursor-pointer ${isSelected
                       ? 'bg-amber-500 text-white shadow-md shadow-amber-500/20 border border-amber-500'
                       : 'bg-white dark:bg-zinc-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-zinc-700 hover:border-amber-300 dark:hover:border-amber-700 hover:bg-amber-50 dark:hover:bg-amber-900/20 shadow-sm'
-                  }`}
+                    }`}
                 >
                   {isSelected && <Check className="w-4 h-4" />}
                   {feature.name}
